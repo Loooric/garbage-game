@@ -1,6 +1,15 @@
-# meow-meow-fuzzyface
+# garbage-game
 
 [![Deploy Phaser Application](https://github.com/choar816/meow-meow-fuzzyface/actions/workflows/deploy.yml/badge.svg)](https://github.com/choar816/meow-meow-fuzzyface/actions/workflows/deploy.yml)
+
+
+demo : https://loooric.github.io/garbage-game/dist/
+
+- [meow-meow-fuzzyface](https://github.com/choar816/meow-meow-fuzzyfacee) 사용
+
+
+-----------------
+
 
 meow-meow-fuzzyface는 게임 뱀파이어 서바이벌(Vampire Survivors)에 영감을 받아 만들어진 게임입니다.
 
