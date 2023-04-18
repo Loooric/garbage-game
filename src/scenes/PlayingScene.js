@@ -68,8 +68,8 @@ export default class PlayingScene extends Phaser.Scene {
         this,
         Config.width / 2 - 200,
         Config.height / 2 - 200,
-        "bat",
-        "bat_anim",
+        "enemy",
+        "enemy_anim",
         10
       )
     );
@@ -157,7 +157,7 @@ export default class PlayingScene extends Phaser.Scene {
     });
 
     // 처음에 나타날 mob을 추가해줍니다.
-    this.addMob("bat", "bat_anim", 10, 0.9);
+    this.addMobSpawnEvent("enemy", "enemy_anim", 10, 0.9);
   }
   //////////////////////////// END OF create() ////////////////////////////
 
@@ -202,14 +202,14 @@ export default class PlayingScene extends Phaser.Scene {
     // TODO : 노가다 -> brilliant way
     // 지금 방식 = 레벨업 할 때마다 mob 종류 추가 (없어지진 않음 ㅋ)
     if (this.m_topBar.m_level == 2) {
-      this.addMob("dog", "dog_anim", 20, 0.6);
+      this.addMobSpawnEvent("dog", "dog_anim", 20, 0.6);
     } else if (this.m_topBar.m_level == 3) {
-      this.addMob("eyeball", "eyeball_anim", 30, 0.3);
+      this.addMobSpawnEvent("eyeball", "eyeball_anim", 30, 0.3);
     }
   }
 
   // mob이 1초마다 생성되도록 event를 생성해줍니다.
-  addMob(mobTexture, mobAnim, mobHp, mobDropRate) {
+  addMobSpawnEvent(mobTexture, mobAnim, mobHp, mobDropRate) {
     this.time.addEvent({
       delay: 1000,
       callback: () => {

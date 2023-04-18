@@ -10,12 +10,12 @@ export const Direction = Object.freeze({
   Right: "Right",
 });
 
-export default class Player extends Phaser.Physics.Arcade.Image {
+export default class Player extends Phaser.Physics.Arcade.Sprite {
   static PLAYER_SPEED = 3;
 
   constructor(scene) {
-    super(scene, 400, 300, "cat");
-    this.scale = 0.4; // 크기 조정
+    super(scene, 400, 300, "player");
+    this.scale = 1; // 크기 조정
     this.alpha = 1; // 투명도 설정
     this.m_hpBar = new HpBar(scene, this, 100); // HP bar 생성
 
@@ -30,6 +30,8 @@ export default class Player extends Phaser.Physics.Arcade.Image {
       },
       loop: true,
     });
+
+    this.play("player_anim");
   }
 
   // mob과 접촉했을 경우

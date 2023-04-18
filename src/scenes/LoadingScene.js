@@ -17,6 +17,8 @@ import pauseOut from "../assets/sounds/pauseOut.ogg";
 import hitMobOgg from "../assets/sounds/hitMob.ogg";
 import batImg from "../assets/spritesheets/bat.png";
 import dogImg from "../assets/spritesheets/dog.png";
+import playerImg from "../assets/spritesheets/player.png";
+import enemyImg from "../assets/spritesheets/enemy.png";
 import eyeballImg from "../assets/spritesheets/eyeball.png";
 
 export default class LoadingScene extends Phaser.Scene {
@@ -27,6 +29,14 @@ export default class LoadingScene extends Phaser.Scene {
 
   preload() {
     this.load.image("background", bgImg);
+    this.load.spritesheet("player", playerImg, {
+      frameWidth: 100,
+      frameHeight: 100,
+    });
+    this.load.spritesheet("enemy", enemyImg, {
+      frameWidth: 70,
+      frameHeight: 140,
+    });
     this.load.spritesheet("bat", batImg, {
       frameWidth: 16,
       frameHeight: 16,
@@ -70,6 +80,19 @@ export default class LoadingScene extends Phaser.Scene {
   create() {
     this.add.text(20, 20, "Loading game...");
     this.scene.start("mainScene");
+
+    this.anims.create({
+      key: "player_anim",
+      frames: this.anims.generateFrameNumbers("player"),
+      frameRate: 6,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "enemy_anim",
+      frames: this.anims.generateFrameNumbers("enemy"),
+      frameRate: 6,
+      repeat: -1,
+    });
 
     this.anims.create({
       key: "bat_anim",

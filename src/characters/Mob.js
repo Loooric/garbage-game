@@ -8,7 +8,7 @@ export default class Mob extends Phaser.Physics.Arcade.Sprite {
     scene.add.existing(this);
     scene.physics.add.existing(this);
 
-    this.scale = 2;
+    this.scale = 1;
     this.m_speed = 50;
     this.m_hp = initHp;
     this.m_dropRate = dropRate;
