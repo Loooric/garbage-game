@@ -19,6 +19,8 @@ import batImg from "../assets/spritesheets/bat.png";
 import dogImg from "../assets/spritesheets/dog.png";
 import playerImg from "../assets/spritesheets/player.png";
 import enemyImg from "../assets/spritesheets/enemy.png";
+import test1Img from "../assets/spritesheets/test1.png";
+import test2Img from "../assets/spritesheets/test2.png";
 import eyeballImg from "../assets/spritesheets/eyeball.png";
 
 export default class LoadingScene extends Phaser.Scene {
@@ -35,7 +37,15 @@ export default class LoadingScene extends Phaser.Scene {
     });
     this.load.spritesheet("enemy", enemyImg, {
       frameWidth: 70,
-      frameHeight: 140,
+      frameHeight: 150,
+    });
+    this.load.spritesheet("test1", test1Img, {
+      frameWidth: 48,
+      frameHeight: 48,
+    });
+    this.load.spritesheet("test2", test2Img, {
+      frameWidth: 96,
+      frameHeight: 96,
     });
     this.load.spritesheet("bat", batImg, {
       frameWidth: 16,
@@ -90,6 +100,18 @@ export default class LoadingScene extends Phaser.Scene {
     this.anims.create({
       key: "enemy_anim",
       frames: this.anims.generateFrameNumbers("enemy"),
+      frameRate: 6,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "test1_anim",
+      frames: this.anims.generateFrameNumbers("test1"),
+      frameRate: 6,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "test2_anim",
+      frames: this.anims.generateFrameNumbers("test2"),
       frameRate: 6,
       repeat: -1,
     });
